@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { FlatList, StyleSheet, View, } from 'react-native';
 import filterFunction from '../../lib/filterFunction';
 import DummyData from '../data/DummyData';
-import Contact from './Contact';
-import ContactForm from './ContactForm';
-import Filter from './Filter';
+import Contact from './Contact.component';
+import ContactForm from './ContactForm.component';
+import Filter from './Filter.component';
 
 type Props = {};
 export default class ContactList extends Component<Props> {

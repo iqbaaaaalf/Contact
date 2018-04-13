@@ -3,8 +3,8 @@ import { StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducers from '../reducers';
-import Login from './Login';
-import MainComponent from './MainComponent';
+import Login from './Login.component';
+import MainComponent from './Main.component';
 
 const store = createStore(rootReducers);
 

@@ -2,7 +2,7 @@ import { shallow } from 'enzyme/build/index';
 import React from 'react';
 import 'react-dom';
 import { TextInput, TouchableHighlight } from 'react-native';
-import FilterInput from '../src/components/Filter';
+import FilterInput from '../src/components/Filter.component';
 
 describe('Filter', () => {
   describe('#_onChangeQuery', () => {
