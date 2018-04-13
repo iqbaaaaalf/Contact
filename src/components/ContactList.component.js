@@ -13,7 +13,6 @@ _keyExtractor = (item, index) => index;
 
 const ContactList = ({ data }) => (
     <View style={styles.container}>
-      { console.log(data)}
       <FlatList
           data={data}
           renderItem={_renderItem}
