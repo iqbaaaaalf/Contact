@@ -6,9 +6,8 @@ const contacts = (state = initialState, action) => {
   if(action.type === 'ADD_CONTACT'){
     return [
       {
-        id: action.id,
-        name: action.name,
-        email: action.email,
+        name: action.payload.name,
+        email: action.payload.email,
       },
       ...state
     ]
