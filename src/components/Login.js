@@ -2,7 +2,6 @@ import LottieView from 'lottie-react-native';
 import React from 'react';
 import { StatusBar, StyleSheet, Text, TextInput, TouchableHighlight, View } from 'react-native';
 import winkAnim from '../assets/animations/emoji_wink';
-import ContactList from './ContactList.backup';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -60,7 +59,7 @@ export default class Login extends React.Component {
 
   _checkCredential(username, password) {
     if ((username === 'Iqbal') && (password === 'Pass')) {
-      this.props.navigation.navigate('ContactList');
+      this.props.navigation.navigate('Main');
     } else {
       this.setState(prevState => ({
         errorMessage: {
