@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
-export default class Contact extends Component {
+export default class ContactComponent extends Component {
   constructor(props) {
     super(props);
   }
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
 });
 
-Contact.propTypes = {
+ContactComponent.propTypes = {
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
 };
