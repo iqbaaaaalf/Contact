@@ -3,7 +3,7 @@ import React from 'react';
 import 'react-dom';
 import { TouchableHighlight } from 'react-native';
 import ContactForm from '../src/components/ContactForm';
-import ContactList from '../src/components/ContactList';
+import ContactList from '../src/components/ContactList.backup';
 import Filter from '../src/components/Filter';
 
 describe('ContactList', () => {

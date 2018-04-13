@@ -1,27 +1,20 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, TextInput, TouchableHighlight, View } from 'react-native';
-import PropTypes from 'prop-types';
+import { StyleSheet, TextInput, View } from 'react-native';
 
 export default class Filter extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      query: '',
-    };
   }
 
   _onChangeInput(text) {
-    this.setState({
-      query: text,
-    });
-  }
-
-  _onSubmit() {
-    const { query } = this.state;
-    this.props.onSubmit(query);
+    const { onChangeText } = this.props;
+    onChangeText(text);
   }
 
   render() {
+    const { filterKeyword } = this.props;
+    console.log(filterKeyword);
+
     return (
         <View style={styles.container}>
           <View style={styles.inputContainer}>
@@ -29,22 +22,13 @@ export default class Filter extends Component {
                 style={styles.input}
                 onChangeText={this._onChangeInput.bind(this)}
                 placeholder="Search..."
+                value={filterKeyword}
             />
           </View>
-          <TouchableHighlight onPress={this._onSubmit.bind(this)}>
-            <Image
-                style={styles.button}
-                source={require('../assets/search-button.png')}
-            />
-          </TouchableHighlight>
         </View>
     );
   }
 }
-
-//Filter.propTypes = {
-//  onSubmit: PropTypes.func().isRequired,
-//};
 
 const styles = StyleSheet.create({
   button: {

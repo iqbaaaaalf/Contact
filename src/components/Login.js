@@ -2,15 +2,14 @@ import LottieView from 'lottie-react-native';
 import React from 'react';
 import { StatusBar, StyleSheet, Text, TextInput, TouchableHighlight, View } from 'react-native';
 import winkAnim from '../assets/animations/emoji_wink';
-import ContactList from './ContactList';
 
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: '',
-      password: '',
+      username: 'Iqbal',
+      password: 'Pass',
       isCredentialWrong: false,
       errorMessage: {
         ifUsernameEmpty: '',
@@ -60,7 +59,7 @@ export default class Login extends React.Component {
 
   _checkCredential(username, password) {
     if ((username === 'Iqbal') && (password === 'Pass')) {
-      this.props.navigation.navigate('ContactList');
+      this.props.navigation.navigate('Main');
     } else {
       this.setState(prevState => ({
         errorMessage: {
@@ -92,7 +91,7 @@ export default class Login extends React.Component {
   }
 
   render() {
-    const {errorMessage } = this.state;
+    const {errorMessage, username, password } = this.state;
 
     return (
         <View style={styles.container}>
@@ -115,11 +114,13 @@ export default class Login extends React.Component {
           </Text>
           <Text style={styles.error}>{errorMessage.ifCredentialWrong}</Text>
           <TextInput
+              value={username}
               style={styles.input}
               onChangeText={this._onChangeUsername.bind(this)}
               placeholder="Username"/>
           <Text style={styles.error}>{errorMessage.ifUsernameEmpty}</Text>
           <TextInput
+              value={password}
               style={styles.input} onChangeText={this._onChangePassword.bind(this)}
               placeholder="Password" secureTextEntry={true}/>
           <Text style={styles.error}>{errorMessage.ifPasswordEmpty}</Text>
