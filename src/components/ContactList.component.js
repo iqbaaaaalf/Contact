@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import Contact from './Contact';
+import Contact from './Contact.component';
 
 _renderItem = ({ item }) => (
     <Contact
@@ -13,7 +13,6 @@ _keyExtractor = (item, index) => index;
 
 const ContactList = ({ data }) => (
     <View style={styles.container}>
-      { console.log(data)}
       <FlatList
           data={data}
           renderItem={_renderItem}
@@ -24,6 +23,7 @@ const ContactList = ({ data }) => (
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: 'center',
     backgroundColor: '#F5FCFF',
   },

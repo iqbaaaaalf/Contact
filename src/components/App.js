@@ -3,10 +3,13 @@ import { StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducers from '../reducers';
-import Login from './Login';
-import MainComponent from './MainComponent';
+import Login from './Login.component';
+import MainComponent from './Main.component';
 
-const store = createStore(rootReducers);
+const store = createStore(
+    rootReducers,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    );
 
 export default class App extends React.Component {
   render() {

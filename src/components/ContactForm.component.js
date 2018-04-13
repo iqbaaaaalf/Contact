@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, TextInput, TouchableHighlight, View } from 'react-native';
-import PropTypes from 'prop-types';
 
 export default class ContactForm extends Component {
   constructor(props) {
@@ -61,10 +60,6 @@ export default class ContactForm extends Component {
     );
   }
 }
-
-//ContactForm.propTypes = {
-//  onSubmit: PropTypes.func().isRequired,
-//}
 
 const styles = StyleSheet.create({
   button: {

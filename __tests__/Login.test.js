@@ -2,7 +2,7 @@ import { mount, shallow } from 'enzyme/build/index';
 import React from 'react';
 import 'react-dom';
 import { TextInput, TouchableHighlight, Text } from 'react-native';
-import Login from '../src/components/Login';
+import Login from '../src/components/Login.component';
 
 describe('Login', () => {
   describe('#_onChangeUsername', () => {
