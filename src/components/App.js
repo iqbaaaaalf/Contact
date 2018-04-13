@@ -1,11 +1,20 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import ContactList from './ContactList';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import ContactList from '../containers/ContactList.container';
+import rootReducers from '../reducers';
 import Login from './Login';
+
+const store = createStore(rootReducers);
 
 export default class App extends React.Component {
   render() {
-    return <RootStack/>;
+    return (
+        <Provider store={store}>
+          <RootStack/>
+        </Provider>
+    );
   }
 }
 
