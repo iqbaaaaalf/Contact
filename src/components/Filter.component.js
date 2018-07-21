@@ -13,7 +13,6 @@ export default class Filter extends Component {
 
   render() {
     const { filterKeyword } = this.props;
-    console.log(filterKeyword);
 
     return (
         <View style={styles.container}>

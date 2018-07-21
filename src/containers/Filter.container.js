@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Filter from '../components/Filter';
+import Filter from '../components/Filter.component';
 
 const mapStateToProps = state => ({
   filterKeyword: state.filterKeyword,

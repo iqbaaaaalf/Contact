@@ -2,7 +2,7 @@ import { shallow } from 'enzyme/build/index';
 import React from 'react';
 import 'react-dom';
 import { TextInput, TouchableHighlight } from 'react-native';
-import ContactForm from '../src/components/ContactForm';
+import ContactForm from '../src/components/ContactForm.component';
 
 describe('Filter', () => {
   describe('#_onChangeName', () => {
