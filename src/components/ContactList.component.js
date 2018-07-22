@@ -6,6 +6,7 @@ _renderItem = ({ item }) => (
     <Contact
         name={item.name}
         email={item.email}
+        score={item.typeRacing.score}
     />
 );
 
