@@ -1,10 +1,11 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import Contact from './ContactElement.component';
+import get from 'lodash.get';
 
 _renderItem = ({ item }) => {
   const { name, email, typeRacing } = item;
-  const score =  0;
+  const score =  get(typeRacing, 'score', 0);
   return(
     <Contact
         name={name}
