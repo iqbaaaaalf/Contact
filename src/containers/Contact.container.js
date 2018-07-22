@@ -6,11 +6,26 @@ import { graphql } from 'react-apollo';
 import { compose } from 'recompose';
 
 const mapStateToProps = state => ({
-  data: filterFunction(state.contacts, state.filterKeyword)
+  filterKeyword: state.filterKeyword
 });
 
+const mapGetRacingContactToProps = ({ownProps, data: {loading, contacts, error}}) => {
+  if(!loading || !error){
+    return {
+      contactData: filterFunction(contacts, ownProps.filterKeyword)
+    };
+  }
+
+  return {
+    contactData: [],
+    loading,
+    error
+  }
+};
+
 export default compose(
-    graphql(GET_RACING_CONTACT)
+    connect(mapStateToProps, null),
+    graphql(GET_RACING_CONTACT, { props: mapGetRacingContactToProps }),
 )(contact);
 
 

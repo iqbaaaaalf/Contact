@@ -2,13 +2,16 @@ import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import Contact from './ContactElement.component';
 
-_renderItem = ({ item }) => (
+_renderItem = ({ item }) => {
+  const { name, email, typeRacing } = item;
+  const score =  0;
+  return(
     <Contact
-        name={item.name}
-        email={item.email}
-        score={item.typeRacing.score}
+        name={name}
+        email={email}
+        score={score}
     />
-);
+)};
 
 _keyExtractor = (item, index) => index;
 

@@ -5,7 +5,7 @@ import Filter from '../containers/Filter.container';
 import ContactForm from '../containers/ContactForm.container';
 import Loading from './Loading.component';
 
-const ContactComponent = ({ data: { loading, contacts, error } }) => {
+const ContactComponent = ({ contactData, loading, error }) => {
   if(loading) {
     return (
         <Loading/>
@@ -23,7 +23,7 @@ const ContactComponent = ({ data: { loading, contacts, error } }) => {
   return (
     <View style={styles.container}>
       <Filter />
-      <ContactList data={contacts} />
+      <ContactList data={contactData} />
       <ContactForm />
     </View>
 )};

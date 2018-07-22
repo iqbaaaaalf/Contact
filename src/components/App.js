@@ -12,7 +12,7 @@ const store = createStore(
 );
 
 const networkInterface = createNetworkInterface({
-  uri: 'http:/localhost:3000/graphql'
+  uri: 'http:/localhost:4000/graphql'
 });
 
 const client = new ApolloClient({ networkInterface });
