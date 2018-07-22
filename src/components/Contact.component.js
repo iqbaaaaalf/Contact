@@ -1,15 +1,23 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import ContactList from '../components/ContactList.component';
 import Filter from '../containers/Filter.container';
 import ContactForm from '../containers/ContactForm.container';
 import Loading from './Loading.component';
 
-const ContactComponent = ({ data: { loading, contacts } }) => {
+const ContactComponent = ({ data: { loading, contacts, error } }) => {
   if(loading) {
     return (
         <Loading/>
     )
+  }
+
+  if(error){
+    return (
+      <View style={{flex: 1, justifyContent:'center', alignItems:'center'}}>
+        <Text >Oopsy daisy ... :(</Text>
+      </View>
+    );
   }
 
   return (
