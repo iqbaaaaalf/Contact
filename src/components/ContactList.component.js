@@ -6,12 +6,14 @@ import get from 'lodash.get';
 _renderItem = ({ item }) => {
   const { name, email, typeRacing } = item;
   const score =  get(typeRacing, 'score', 0);
+  const nationality = get(typeRacing, 'nationality', 'Indonesia');
 
   return(
     <Contact
         name={name}
         email={email}
         score={score}
+        nationality={nationality}
     />
 )};
 

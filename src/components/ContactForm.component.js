@@ -57,7 +57,7 @@ export default class ContactForm extends Component {
           <TouchableHighlight onPress={this._onSubmit.bind(this)}>
             <Image
                 style={styles.button}
-                source={require('../assets/add-button.png')}
+                source={require('../assets/images/add-button.png')}
             />
           </TouchableHighlight>
         </View>

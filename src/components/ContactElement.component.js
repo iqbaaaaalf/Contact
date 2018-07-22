@@ -1,15 +1,17 @@
-import md5 from 'md5';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
+import constant from '../constant';
 import { pure } from 'recompose';
 
-const Contact = ({ name, email, score}) => {
+const Contact = ({ name, email, score, nationality}) => {
+  const imageLocation = constant.images[nationality];
+
   return (
       <View style={styles.container}>
         <Image
             style={styles.box}
-            source={{ uri: `https://gravatar.com/avatar/${md5(email)}.png?s=50` }}
+            source={imageLocation}
         />
         <View style={styles.info}>
           <Text style={styles.infoText}>{name}</Text>
