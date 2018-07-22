@@ -1,6 +1,6 @@
 import React from 'react';
+import { ApolloProvider, ApolloClient, createNetworkInterface } from 'react-apollo';
 import { StackNavigator } from 'react-navigation';
-import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducers from '../reducers';
 import Login from './Login.component';
@@ -8,15 +8,21 @@ import MainComponent from './Main.component';
 
 const store = createStore(
     rootReducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    );
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
+
+const networkInterface = createNetworkInterface({
+  uri: 'http:/localhost:3000/graphql'
+});
+
+const client = new ApolloClient({ networkInterface });
 
 export default class App extends React.Component {
   render() {
     return (
-        <Provider store={store}>
+        <ApolloProvider store={store} client={client}>
           <RootStack/>
-        </Provider>
+        </ApolloProvider>
     );
   }
 }
