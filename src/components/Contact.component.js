@@ -1,47 +1,23 @@
-import md5 from 'md5';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import ContactList from '../components/ContactList.component';
+import Filter from '../containers/Filter.container';
+import ContactForm from '../containers/ContactForm.container';
 
-export default class Contact extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-        <View style={styles.container}>
-          <Image
-              style={styles.image}
-              source={{ uri: `https://gravatar.com/avatar/${md5(this.props.email)}.png?s=50` }}
-          />
-          <View style={styles.info}>
-            <Text style={{ fontSize: 16 }}>{this.props.name}</Text>
-            <Text style={{ fontSize: 16 }}>{this.props.email}</Text>
-          </View>
-        </View>
-    );
-  }
-}
+const ContactComponent = ({ data }) => (
+    <View style={styles.container}>
+      <Filter />
+      <ContactList data={data} />
+      <ContactForm />
+    </View>
+);
 
 const styles = StyleSheet.create({
   container: {
-    margin: 10,
-    flexDirection: 'row',
-  },
-  info: {
-    margin: 5,
-    flexDirection: 'column',
-  },
-  image: {
-    width: 50,
-    height: 50,
-    marginRight: 10,
-    borderRadius: 15,
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#F5FCFF',
   },
 });
 
-Contact.propTypes = {
-  name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-};
+export default ContactComponent;

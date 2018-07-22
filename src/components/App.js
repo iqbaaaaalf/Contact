@@ -4,7 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import { createStore } from 'redux';
 import rootReducers from '../reducers';
 import Login from './Login.component';
-import MainComponent from './Main.component';
+import Contact from '../containers/Contact.container';
 
 const store = createStore(
     rootReducers,
@@ -32,7 +32,7 @@ const RootStack = StackNavigator({
     screen: Login,
   },
   Main: {
-    screen: MainComponent,
+    screen: Contact,
   },
 }, {
   initialRouteName: 'Login',

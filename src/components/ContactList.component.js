@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import Contact from './Contact.component';
+import Contact from './ContactElement.component';
 
 _renderItem = ({ item }) => (
     <Contact
