@@ -23,10 +23,14 @@ export default class ContactForm extends Component {
     });
   }
 
-  _onSubmit() {
+  async _onSubmit() {
+    const { addContact } = this.props;
+
     const data = {
       name: this.state.name,
       email: this.state.email,
+      phone: '081804905774',
+      photo: 'https://'
     };
 
     this.setState({
@@ -34,7 +38,7 @@ export default class ContactForm extends Component {
       email: '',
     });
 
-    this.props.onSubmit(data);
+    await addContact(data);
   }
 
   render() {

@@ -6,6 +6,8 @@ import rootReducers from '../reducers';
 import Login from './Login.component';
 import Contact from '../containers/Contact.container';
 
+console.disableYellowBox = true
+
 const store = createStore(
     rootReducers,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
