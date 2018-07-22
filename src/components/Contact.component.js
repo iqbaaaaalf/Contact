@@ -14,7 +14,7 @@ const ContactComponent = ({ data: { loading, contacts, error } }) => {
 
   if(error){
     return (
-      <View style={{flex: 1, justifyContent:'center', alignItems:'center'}}>
+      <View style={styles.error}>
         <Text >Oopsy daisy ... :(</Text>
       </View>
     );
@@ -34,6 +34,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#F5FCFF',
   },
+  error: {
+    flex: 1,
+    justifyContent:'center',
+    alignItems:'center'
+  }
 });
 
 export default ContactComponent;
