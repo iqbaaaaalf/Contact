@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import 'react-dom';
-import Contact from '../src/components/Contact.component';
+import Contact from '../src/components/ContactElement.component';
 
 describe('Contact', () => {
   describe('displayName', () => {

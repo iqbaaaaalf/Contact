@@ -2,15 +2,9 @@ import { mount, shallow } from 'enzyme/build/index';
 import React from 'react';
 import 'react-dom';
 import { TouchableHighlight } from 'react-native';
-<<<<<<< HEAD
 import ContactForm from '../src/components/ContactForm.component';
-import ContactList from '../src/components/ContactList.backup';
+import ContactList from '../src/components/ContactList.component';
 import Filter from '../src/components/Filter.component';
-=======
-import ContactForm from '../src/components/ContactForm';
-import ContactList from '../src/components/ContactList.backup';
-import Filter from '../src/components/Filter';
->>>>>>> master
 
 describe('ContactList', () => {
   it('should contain "Chetan" in list', () => {

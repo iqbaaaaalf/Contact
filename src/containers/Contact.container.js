@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import filterFunction from '../../lib/filterFunction';
-import ContactList from '../components/ContactList.component';
+import contact from '../components/Contact.component';
 
 const mapStateToProps = state => ({
   data: filterFunction(state.contacts, state.filterKeyword)
 });
 
-export default connect(mapStateToProps, null)(ContactList);
+export default connect(mapStateToProps, null)(contact);
