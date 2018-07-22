@@ -12,8 +12,8 @@ const Contact = ({ name, email, score}) => {
             source={{ uri: `https://gravatar.com/avatar/${md5(email)}.png?s=50` }}
         />
         <View style={styles.info}>
-          <Text style={{ fontSize: 16 }}>{name}</Text>
-          <Text style={{ fontSize: 16 }}>{email}</Text>
+          <Text style={styles.infoText}>{name}</Text>
+          <Text style={styles.infoText}>{email}</Text>
         </View>
         <View style={styles.box}>
           <Text style={styles.score}>{score}</Text>
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
   info: {
     margin: 5,
     flexDirection: 'column',
+    alignItems: 'center'
   },
   box: {
     width: 50,
@@ -41,6 +42,9 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  infoText: {
+    fontSize: 16
   },
   score: {
     fontSize: 24,
